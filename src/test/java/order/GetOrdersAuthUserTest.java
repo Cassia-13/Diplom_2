@@ -15,12 +15,12 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.equalTo;
 
 public class GetOrdersAuthUserTest {
-    Faker faker = new Faker();
-    OrderApi orderApi = new OrderApi();
-    UserApi userApi = new UserApi();
-    UserResponse userResponse = new UserResponse();
+    private final Faker faker = new Faker();
+    private final OrderApi orderApi = new OrderApi();
+    private final UserApi userApi = new UserApi();
+    private UserResponse userResponse = new UserResponse();
 
-    User user = new User(faker.name().username() + "@piu.ru", faker.random().hex(), faker.name().firstName());
+    private final User user = new User(faker.name().username() + "@piu.ru", faker.random().hex(), faker.name().firstName());
 
     @Before
     public void createUser() {

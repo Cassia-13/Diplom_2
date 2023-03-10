@@ -3,12 +3,12 @@ package model.order;
 import java.util.List;
 
 public class OrderResponse {
-    String name;
-    Order order;
-    String success;
-    List<Order> orders;
-    int total;
-    int totalToday;
+    private String name;
+    private Order order;
+    private String success;
+    private List<Order> orders;
+    private int total;
+    private int totalToday;
 
     public List<Order> getOrders() {
         return orders;

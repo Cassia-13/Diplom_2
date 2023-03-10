@@ -3,8 +3,8 @@ package model.ingredients;
 import java.util.List;
 
 public class IngredientsResponse {
-    boolean success;
-    List <Ingredients> data;
+    private boolean success;
+    private List <Ingredients> data;
 
     public boolean isSuccess() {
         return success;

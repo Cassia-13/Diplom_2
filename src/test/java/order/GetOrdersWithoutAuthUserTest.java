@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class GetOrdersWithoutAuthUserTest {
 
-    OrderApi orderApi = new OrderApi();
+    private final OrderApi orderApi = new OrderApi();
 
     @Test
     @DisplayName("Get user's orders without authorization. Checking  the status code")

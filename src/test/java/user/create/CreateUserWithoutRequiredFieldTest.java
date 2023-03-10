@@ -9,9 +9,9 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.equalTo;
 
 public class CreateUserWithoutRequiredFieldTest {
-    UserApi userApi = new UserApi();
-    Faker faker = new Faker();
-    User user = new User(faker.address().city() + "@piu.ru", faker.random().hex(), faker.name().firstName());
+    private final UserApi userApi = new UserApi();
+    private final Faker faker = new Faker();
+    private final User user = new User(faker.address().city() + "@piu.ru", faker.random().hex(), faker.name().firstName());
 
     @Test
     @DisplayName("Creating unique user without email")

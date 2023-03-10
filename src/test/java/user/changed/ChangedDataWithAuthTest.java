@@ -13,10 +13,10 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.equalTo;
 
 public class ChangedDataWithAuthTest {
-    Faker faker = new Faker();
-    UserApi userApi = new UserApi();
-    UserResponse userResponse = new UserResponse();
-    User user = new User(faker.name().username() + "@piu.ru", faker.random().hex(), faker.name().firstName());
+    private final Faker faker = new Faker();
+    private final UserApi userApi = new UserApi();
+    private UserResponse userResponse = new UserResponse();
+    private final User user = new User(faker.name().username() + "@piu.ru", faker.random().hex(), faker.name().firstName());
 
 
     @Before

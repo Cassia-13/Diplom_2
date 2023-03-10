@@ -3,12 +3,12 @@ package model.order;
 import java.util.List;
 
 public class Order {
-    List<String> ingredients;
-    String number;
-    String _id;
-    String status;
-    String createdAt;
-    String updatedAt;
+    private List<String> ingredients;
+    private String number;
+    private String _id;
+    private String status;
+    private String createdAt;
+    private String updatedAt;
 
     public String get_id() {
         return _id;

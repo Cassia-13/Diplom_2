@@ -12,9 +12,9 @@ import org.junit.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 public class LoginTest {
-    Faker faker = new Faker();
-    UserApi userApi = new UserApi();
-    User user = new User(faker.name().username() + "@piu.ru", faker.random().hex(), faker.name().firstName());
+    private final Faker faker = new Faker();
+    private final UserApi userApi = new UserApi();
+    private final User user = new User(faker.name().username() + "@piu.ru", faker.random().hex(), faker.name().firstName());
 
     @Before
     public void createUser() {

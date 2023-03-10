@@ -3,10 +3,10 @@ package model.user;
 import java.util.Objects;
 
 public class UserResponse {
-    boolean success;
-    User user;
-    String accessToken;
-    String refreshToken;
+    private boolean success;
+    private User user;
+    private String accessToken;
+    private String refreshToken;
 
     public UserResponse(boolean success, User user, String accessToken, String refreshToken) {
         this.success = success;

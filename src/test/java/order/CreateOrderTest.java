@@ -17,8 +17,8 @@ import java.util.List;
 import static org.hamcrest.Matchers.equalTo;
 
 public class CreateOrderTest {
-    OrderApi orderApi = new OrderApi();
-    Order order = new Order();
+    private final OrderApi orderApi = new OrderApi();
+    private final Order order = new Order();
 
     @Test
     @DisplayName("Creating an order with authorization and ingredients")

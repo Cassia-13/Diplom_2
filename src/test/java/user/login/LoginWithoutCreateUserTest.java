@@ -9,8 +9,8 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.equalTo;
 
 public class LoginWithoutCreateUserTest {
-    Faker faker = new Faker();
-    UserApi userApi = new UserApi();
+    private final Faker faker = new Faker();
+    private final UserApi userApi = new UserApi();
 
 
     @Test
