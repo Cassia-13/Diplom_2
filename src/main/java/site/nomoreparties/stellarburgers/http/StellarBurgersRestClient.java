@@ -6,7 +6,7 @@ import io.restassured.specification.RequestSpecification;
 
 abstract class StellarBurgersRestClient {
 
-    private final String BASE_URL = "https://stellarburgers.nomoreparties.site";
+    private static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
 
     protected RequestSpecification baseSpec() {
         return new RequestSpecBuilder()

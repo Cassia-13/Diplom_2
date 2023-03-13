@@ -9,15 +9,11 @@ import site.nomoreparties.stellarburgers.model.user.UserResponse;
 
 public abstract class DefaultTest {
     protected final Faker faker = new Faker();
-    
-    protected UserResponse userResponse = new UserResponse();
-
 
     protected final UserApi userApi = new UserApi();
-
     protected final OrderApi orderApi = new OrderApi();
+
     protected final Order order = new Order();
-    
-    
+    protected UserResponse userResponse = new UserResponse();
     protected User user = new User(faker.name().username() + "@piu.ru", faker.random().hex(), faker.name().firstName());
 }

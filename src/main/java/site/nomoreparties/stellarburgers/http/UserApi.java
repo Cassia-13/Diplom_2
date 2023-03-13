@@ -9,10 +9,10 @@ import site.nomoreparties.stellarburgers.model.user.UserResponse;
 import static io.restassured.RestAssured.given;
 
 public class UserApi extends StellarBurgersRestClient {
-    private final String registrationApi = "/api/auth/register";
-    private final String authApi = "/api/auth/login";
-    private final String removeApi = "/api/auth/user";
-    private final String changedApi = "api/auth/user";
+    private static final String REGISTRATION = "/api/auth/register";
+    private static final String AUTH = "/api/auth/login";
+    private static final String REMOVE = "/api/auth/user";
+    private static final String CHANGE = "api/auth/user";
 
     @Step("User registration. POST '/api/auth/register'")
     public Response registrationResponse(User user) {
@@ -20,7 +20,7 @@ public class UserApi extends StellarBurgersRestClient {
                 .spec(baseSpec())
                 .body(user)
                 .when()
-                .post(registrationApi);
+                .post(REGISTRATION);
     }
 
     @Step("User authorization. POST '/api/auth/login'")
@@ -29,7 +29,7 @@ public class UserApi extends StellarBurgersRestClient {
                 .spec(baseSpec())
                 .body(user)
                 .when()
-                .post(authApi);
+                .post(AUTH);
 
         user.setAccessToken(response.jsonPath().getString("accessToken"));
 
@@ -43,7 +43,7 @@ public class UserApi extends StellarBurgersRestClient {
                 .spec(baseSpec())
                 .header("Authorization", userResponse.getAccessToken())
                 .when()
-                .delete(removeApi);
+                .delete(REMOVE);
     }
 
     @Step("Changing a user. PATCH 'api/auth/user', use auth: {useAuth}")
@@ -61,6 +61,6 @@ public class UserApi extends StellarBurgersRestClient {
                 .header(header)
                 .body(user)
                 .when()
-                .patch(changedApi);
+                .patch(CHANGE);
     }
 }

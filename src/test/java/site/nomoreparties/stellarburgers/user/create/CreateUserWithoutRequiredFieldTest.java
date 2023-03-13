@@ -23,8 +23,6 @@ public class CreateUserWithoutRequiredFieldTest extends DefaultTest {
                 .body("message", equalTo("Email, password and name are required fields"));
 
         userApi.registrationResponse(user).body().as(UserResponse.class);
-
-            user.setEmail(email);
     }
 
     @Test
@@ -38,8 +36,6 @@ public class CreateUserWithoutRequiredFieldTest extends DefaultTest {
                 .statusCode(403)
                 .body("success", equalTo(false))
                 .body("message", equalTo("Email, password and name are required fields"));
-
-            user.setPassword(password);
     }
 
     @Test
@@ -53,9 +49,6 @@ public class CreateUserWithoutRequiredFieldTest extends DefaultTest {
                 .statusCode(403)
                 .body("success", equalTo(false))
                 .body("message", equalTo("Email, password and name are required fields"));
-
-            user.setName(name);
-
     }
 
     @After

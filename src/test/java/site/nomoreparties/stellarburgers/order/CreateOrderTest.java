@@ -19,10 +19,6 @@ public class CreateOrderTest extends DefaultTest {
     @Test
     @DisplayName("Creating an order with authorization and ingredients")
     public void createOrderWithAuthAndIngredients() {
-        Faker faker = new Faker();
-        UserApi userApi = new UserApi();
-        User user = new User(faker.name().username() + "@piu.ru", faker.random().hex(), faker.name().firstName());
-
         userApi.registrationResponse(user);
         UserResponse response = userApi.authResponse(user)
                 .body().as(UserResponse.class);

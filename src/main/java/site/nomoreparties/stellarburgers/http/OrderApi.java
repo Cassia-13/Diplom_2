@@ -10,8 +10,8 @@ import site.nomoreparties.stellarburgers.model.user.UserResponse;
 import static io.restassured.RestAssured.given;
 
 public class OrderApi extends StellarBurgersRestClient {
-    private final String createApi = "/api/orders";
-    private final String getOrdersUserApi = "/api/orders";
+    private static final String CREATE = "/api/orders";
+    private static final String GET_ORDER_USER = "/api/orders";
 
     @Step("Create a order with authorization. Post '/api/orders'")
     public Response createResponse(UserResponse userResponse, Order order) {
@@ -20,7 +20,7 @@ public class OrderApi extends StellarBurgersRestClient {
                 .header("Authorization", userResponse.getAccessToken())
                 .body(order)
                 .when()
-                .post(createApi);
+                .post(CREATE);
     }
 
     @Step("Create a order without authorization. Post '/api/orders'")
@@ -29,7 +29,7 @@ public class OrderApi extends StellarBurgersRestClient {
                 .spec(baseSpec())
                 .body(order)
                 .when()
-                .post(createApi);
+                .post(CREATE);
     }
 
     @Step("Get user's orders. Get '/api/orders', use auth: {useAuth} ")
@@ -46,6 +46,6 @@ public class OrderApi extends StellarBurgersRestClient {
                 .spec(baseSpec())
                 .header(header)
                 .when()
-                .get(getOrdersUserApi);
+                .get(GET_ORDER_USER);
     }
 }

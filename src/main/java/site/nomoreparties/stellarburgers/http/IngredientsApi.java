@@ -7,12 +7,14 @@ import static io.restassured.RestAssured.given;
 
 public class IngredientsApi extends StellarBurgersRestClient {
 
+    private static final String GET_INGREDIENTS = "/api/ingredients";
+
     @Step("Get the ingredients. GET '/api/ingredients'")
     public Response getIngredientsResponse() {
-        String getIngredientsApi = "/api/ingredients";
+
         return given()
                 .spec(baseSpec())
                 .when()
-                .get(getIngredientsApi);
+                .get(GET_INGREDIENTS);
     }
 }
